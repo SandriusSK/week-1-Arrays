@@ -1,10 +1,14 @@
 package ie.atu;
 
+import java.util.Scanner;
+
 public class ArrayDemo
 {
     public static void main (String [] args)
     {
         int[] anArray;
+
+
 
         anArray = new int[10];
 
@@ -18,6 +22,7 @@ public class ArrayDemo
         anArray[7] = 800;
         anArray[8] = 900;
         anArray[9] = 1000;
+        anArray[10] = 1100;
 
         System.out.println("Element at index 0: " + anArray[0]);
         System.out.println("Element at index 1: " + anArray[1]);
@@ -29,5 +34,30 @@ public class ArrayDemo
         System.out.println("Element at index 7: " + anArray[7]);
         System.out.println("Element at index 8: " + anArray[8]);
         System.out.println("Element at index 9: " + anArray[9]);
+
+        int indexValue = 0;
+
+        for (int value: anArray)
+        {
+            System.out.println("Element at index " + indexValue + " : " + value);
+            indexValue++;
+        }
+
+        Scanner anScan = new Scanner(System.in);
+
+        try
+        {
+            System.out.println("Please enter a new number: ");
+            anArray[10] = anScan.nextInt();
+        }
+        catch (ArrayIndexOutOfBoundsException aiob)
+        {
+            System.out.println("We went outside of our allocated memory block");
+        }
+
     }
+
+
+
+
 }
